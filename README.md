@@ -1,4 +1,5 @@
 Stripper.py is a tool for those pesky password dumps and E-Mail lists.
+
 usage: Stripper.py [-h] [-d DELIMITER] [-i INPUT] [-o OUTPUT [OUTPUT ...]]
                    [-a] [-v] [-e] [-r REPLACE]
 
