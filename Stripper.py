@@ -79,7 +79,7 @@ def emailstrip(infile, outfile, append, verbose):
 if __name__ == "__main__":
         #Set all args:
         #Username and Pass Parser:
-        parser = argparse.ArgumentParser(description='Stripper v0.1')
+        parser = argparse.ArgumentParser(description='Stripper v0.2')
         #Delimiter Parser:
         parser.add_argument('-d', dest='delimiter', action='store', help='The char you would like to split the string by.')
         #Input File:
@@ -93,7 +93,7 @@ if __name__ == "__main__":
         #E-Mail Parser:
         parser.add_argument('-e', dest='email', action='store_true', help='parse username from a E-Mail address.')
         #Replace Argument to replace chars or strings in a file:
-        parser.add_argument('-r', dest='replace', action='store', help='replace a char or string in the file.')
+        parser.add_argument('-r', dest='replace', action='store', help='replace a char or string in the file. **Not yet active')
         args = parser.parse_args()
         #Handle all the args
         #If the -e is not passed it will do a file parse:
