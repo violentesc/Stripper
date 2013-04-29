@@ -1,5 +1,5 @@
 #! /usr/bin/env python
-##Stripper.py##
+##Stripper.py v0.2##
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -34,12 +34,15 @@ def fileparse(delimiter, infile, outfile, append, verbose, replace):
 			print("Cant open output file(s)!")
 			exit(1)
         for line in infile:
-            	line = line.strip()
-            	line = line.split(delimiter)
-		if verbose:
-            		print(line[0]+line[1])
-		outfiles[0].write(line[0].strip()+"\n")
-		outfiles[1].write(line[1].strip()+"\n")
+		if line:
+            		line = line.strip()
+            		line = line.split(delimiter)
+			#test the index
+			if len(line) >= 2:
+				if verbose:
+            				print(line[0]+line[1])
+				outfiles[0].write(line[0].strip()+"\n")
+				outfiles[1].write(line[1].strip()+"\n")
 	infile.close()
 	outfiles[0].close()
 	outfiles[1].close()		
