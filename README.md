@@ -2,7 +2,7 @@ Stripper.py is a tool for those pesky password dumps and E-Mail lists.
 
 usage: Stripper.py [-h] [-d DELIMITER] [-i INPUT] [-o OUTPUT [OUTPUT ...]] [-a] [-v] [-e] [-r REPLACE]
 
-Stripper v0.1
+Stripper.py
 
 optional arguments:
 
@@ -20,4 +20,4 @@ optional arguments:
   
   -e                                  parse username from a E-Mail address.
   
-  -r REPLACE                          replace a char or string in the file.
+  -r REPLACE                          replace a char or string in the file. **not yet active
