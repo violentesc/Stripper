@@ -1,5 +1,8 @@
 #! /usr/bin/env python
+####################
 ##Stripper.py v0.2##
+####################
+#####################################################################
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
 #the Free Software Foundation, either version 3 of the License, or
@@ -12,10 +15,12 @@
 
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
+######################################################################
 import argparse, sys
-#create the parse function:
-def fileparse(delimiter, infile, outfile, append, verbose, replace):
+##########################
+# The file parse function:
+##########################
+def fileparse(delimiter, infile, outfile, append, verbose):
         try:
 		infile = open(infile, 'r')
 	except:
@@ -45,10 +50,14 @@ def fileparse(delimiter, infile, outfile, append, verbose, replace):
 				outfiles[1].write(line[1].strip()+"\n")
 	infile.close()
 	outfiles[0].close()
-	outfiles[1].close()		
-##strip the user name from a file and place it into a new file:
-#def userstrip(infile, outfile, append, verbose):
-##Strip the end of an email url from the user name:
+	outfiles[1].close()
+##########################		
+#Replace a string or char:
+##########################
+#def replace(infile, verbose, replace):
+##################################################
+#Strip the end of an email url from the user name:
+##################################################
 def emailstrip(infile, outfile, append, verbose):
 	try:
 		infile = open(infile, 'r')
@@ -75,7 +84,9 @@ def emailstrip(infile, outfile, append, verbose):
 			outfiles.write(line[:i]+'\n')
 		except:
 			print(line+"-> not an Email")
-
+######
+#Main:
+######
 if __name__ == "__main__":
         #Set all args:
         #Username and Pass Parser:
@@ -100,6 +111,6 @@ if __name__ == "__main__":
         if args.email == 1:
            	emailstrip(args.input, args.output, args.append, args.verbose)
 	elif args.delimiter and args.input and args.output:
-		fileparse(args.delimiter, args.input, args.output, args.append, args.verbose, args.replace)
+		fileparse(args.delimiter, args.input, args.output, args.append, args.verbose)
         else:
 		parser.print_help(None)
